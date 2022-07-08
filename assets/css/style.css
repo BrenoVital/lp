@@ -5,6 +5,14 @@
   font-family: 'Gentium Book Plus', serif;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -28,11 +36,18 @@ a {
   background: #fff;
 }
 
+.line3 {
+  width: 90%;
+  height: 3px;
+  margin: 10px 0;
+  background: #fff;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: black;
+  background-color: #242323;
   height: 10vh;
 }
 
@@ -50,6 +65,12 @@ nav {
   color: #02779e;
 }
 
+.banner h1 {
+  animation-duration: 4s;
+  animation-name: slidein;
+  animation-direction: alternate;
+}
+
 .mobile-menu {
   cursor: pointer;
   display: none;
@@ -58,7 +79,7 @@ nav {
 .banner {
   height: 90vh;
   width: 100%;
-  background-image: url('/assets/images/banner1.jpg');
+  background-image: url('/assets/images/banner3.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,8 +90,10 @@ nav {
 }
 
 .banner h1 {
-  font-size: 50px;
-  color: #fff;
+  font-family: basic, sans-serif;
+  font-size: 42px;
+  color: #242323;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px;
   text-align: center;
@@ -79,20 +102,22 @@ nav {
 .container {
   max-width: 1280px auto;
   margin: 0 auto;
+  height: 100vh;
   padding: 0 20px;
-  width: 100%;
-  background-color: black;
+  background-color: #242323;
 }
 
 .sobre {
-  width: 50%;
+  width: 80vw;
   height: auto;
   text-align: justify;
   color: white;
   margin: auto;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 700;
   line-height: 1.5;
   padding: 20px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .column {
@@ -102,7 +127,7 @@ nav {
 
 .left {
   width: 50%;
-  height: auto;
+  height: 400px;
   text-align: justify;
   color: white;
   margin: auto;
@@ -120,53 +145,35 @@ nav {
   padding: 10px;
   font-size: 16px;
   line-height: 1.5;
-  background-color: gray;
+}
+
+.columnLogo img {
+  width: 218px;
+  height: 58px;
+  margin: auto;
+  display: block;
 }
 
 .right {
   width: 50%;
-  height: auto;
+  height: 400px;
   text-align: justify;
   color: white;
   padding: 10px;
   font-size: 16px;
   line-height: 1.5;
-  border-left: 3px solid red;
+  border-left: 2px solid #067A0A;
+}
+
+.sobre, .left, .right {
+  background-color: #242323;
 }
 
 .columnEscrita {
-  margin-top: 20px;
-}
-
-
-
-@media (max-width: 999px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .nav-list {
-    position: absolute;
-    top: 10vh;
-    right: 0;
-    width: 50vw;
-    height: 90vh;
-    background-color: #23232e;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
-  }
-
-  .nav-list li {
-    margin-left: 0;
-    opacity: 0;
-  }
-
-  .mobile-menu {
-    display: block;
-  }
+  text-align: justify;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .nav-list.active {
@@ -184,6 +191,70 @@ nav {
   transform: translateX(0);
 }
 
+.numeros {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1280px auto;
+  margin: 0 auto;
+  background-color: #242323;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  height: auto;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  animation-name: card;
+  animation-duration: 5s;
+  animation-direction: alternate;
+}
+
+.card h1 {
+  text-align: start;
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.card p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  font-style: normal;
+}
+
+@keyframes card {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-right: 30%;
+    opacity: 0;
+    width: 300%;
+    font-size: 10px;
+  }
+
+  to {
+    opacity: 1;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
 @keyframes navLinkFade {
   from {
     opacity: 0;
@@ -198,6 +269,7 @@ nav {
 
 .mobile-menu.active .line1 {
   transform: rotate(-45deg) translate(-8px, 8px);
+  transition: 1s;
 }
 
 .mobile-menu.active .line2 {
@@ -206,4 +278,99 @@ nav {
 
 .mobile-menu.active .line3 {
   transform: rotate(45deg) translate(-5px, -7px);
+  transition: 1s;
+}
+
+.section3 {
+  height: 100vh;
+  background-color: #242323;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 999px) {
+
+
+  .nav-list {
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    /* alterar tamanho do menu no menu-mobile */
+    width: 100vw;
+    height: 90vh;
+    background-color: #232323;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+
+  }
+
+  .sobre {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .sobre p {
+    margin: 20px 0;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .right {
+    border-left: none;
+  }
+
+  .numeros {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .card {
+    width: 100%;
+    flex-direction: column;
+  }
 }
